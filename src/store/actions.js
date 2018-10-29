@@ -6,7 +6,7 @@ export const actions = {
         context.commit("INCREMENT", context)
     },
     addToCart: (context, payload) => {
-        context.commit("ADD_TO_CART", context)
+        context.commit("ADD_TO_CART", payload)
     }
 
 }

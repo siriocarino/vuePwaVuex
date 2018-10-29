@@ -8,7 +8,7 @@
     </ul>
     <ul>
     <li v-for="(todo, index) in doneTodos" v-bind:key="index">
-           {{ todo.id }} - {{ todo.text }} -   <button @click="btAddCart()">Add to cart</button>
+           {{ todo.id }} - {{ todo.text }} -   <button @click="btAddCart(todo)">Add to cart</button>
 
     </li>
     </ul>
