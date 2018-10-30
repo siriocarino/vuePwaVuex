@@ -19,5 +19,11 @@ export const mutations = {
      [types.ADD_TO_CART](state, item) {
           state.cart.added.push(item)
      },
+     [types.SHOW_CART](state, boolean) {
+          state.ui.showCartList = boolean;
+     },
+     [types.SET_PRODUCTS](state, products) {
+          state.products.all = products;
+     },
 
 }

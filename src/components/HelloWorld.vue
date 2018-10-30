@@ -9,12 +9,13 @@
     <ul>
     <li v-for="(todo, index) in doneTodos" v-bind:key="index">
            {{ todo.id }} - {{ todo.text }} -   <button @click="btAddCart(todo)">Add to cart</button>
-
     </li>
     </ul>
     <p >There are currently links   </p>
     <button @click="add()">Change Score</button>
     <button @click="btAddLink('www.sirio.com')">Add Link</button>
+    <button @click="btShowCart(true)">Show Cart</button>
+
   </div>
 </template>
 
@@ -40,7 +41,8 @@ export default {
     ...mapActions({
       add: "increment",
       btAddLink: "addLink", // map `this.add()` to `this.$store.dispatch('increment')`
-      btAddCart: "addToCart" // map `this.add()` to `this.$store.dispatch('increment')`
+      btAddCart: "addToCart", // map `this.add()` to `this.$store.dispatch('increment')`
+      btShowCart: "showCart"
 
     })
   }

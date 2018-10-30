@@ -9,10 +9,6 @@ import childA from "./modules/childA.js";
 import childB from "./modules/childB.js";
 
 
-import LogRocket from "logrocket"
-// LogRocket.init('app/id')
-import createPlugin from "logrocket-vuex"
-const logrocketPlugin = createPlugin(LogRocket)
 
 Vue.use(Vuex)
 console.log("test index store")
@@ -28,6 +24,5 @@ export default new Vuex.Store({
   modules: {
     scoreBoard: childA,
     resultBoard: childB
-  },
-  plugins: [logrocketPlugin]
+  }
 });

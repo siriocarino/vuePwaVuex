@@ -5,13 +5,17 @@ export const state = {
           userName: ''
      },
      ui: {
-          windowCollapsed: false
+          windowCollapsed: false,
+          showCartList:false,
      },
      products: {
           all: []
      },
      cart: {
-          added: []
+          added: [],
+          checkoutStatus: '',
+          quantity:0,
+          total:Number,
      },
      title: 'My Custom Title',
      count: 0,
