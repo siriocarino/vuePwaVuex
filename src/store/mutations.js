@@ -23,7 +23,19 @@ export const mutations = {
           state.ui.showCartList = boolean;
      },
      [types.SET_PRODUCTS](state, products) {
-          state.products.all = products;
+          state.products.all = products
+     },
+     [types.PUSH_PRODUCTS_TO_CART](state, products) {
+          state.cart.added.push(products)
+     },
+     [types.INCREMENT_CART](state, products) {
+          const cartItem = state.cart.added.find(item => item.id === products.id)
+          cartItem.quantity++
+     },
+     [types.DECREMENT_PRODUCT](state, products) {
+          // decrement products;
      },
 
 }
+
+

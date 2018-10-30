@@ -25,7 +25,12 @@ export default {
       products: state => state.products.all
     })
   },
-  methods: mapActions("cart", ["addProductToCart"]),
+  methods: {
+    ...mapActions({
+      addProductToCart: "addProductToCart",
+
+    })
+  },
   created() {
    this.$store.dispatch("getAllProduts");
   }

@@ -18,6 +18,14 @@ export const actions = {
         mokShop.getProducts(
             products => { context.commit("SET_PRODUCTS", products) } 
         );
-    }
-
+    },
+    addProductToCart: (context, product) => {
+        const selfItem = context.state.cart.added.find(item => item.id === product.id)
+        if(!selfItem){
+            context.commit("PUSH_PRODUCTS_TO_CART", product)
+        }else{
+            context.commit("INCREMENT_CART", product)
+        }
+        context.commit("DECREMENT_PRODUCT", product)
+    },
 }
