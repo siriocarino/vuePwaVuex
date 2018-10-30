@@ -4,10 +4,12 @@
 
      <h3>Cart LIST</h3>
      <ul>
-          <li v-for="(cart, index) in cartList" v-bind:key="index">
-               {{ cart.id }} - {{ cart.text }} 
+          <li v-for="(product, index) in cartList" :key="product.id">
+                {{ product.title }} - {{ product.price | currency }} x {{ product.quantity }}
           </li>
     </ul>
+    <p>Total: {{ total | currency }}</p>
+
     <p><button  @click="checkout(cart)">Checkout</button></p>
 
 </div>
@@ -21,7 +23,9 @@ export default {
   computed: {
     ...mapGetters(["cartList"]),
     ...mapGetters({
-      isVisible: 'showCart' // map `this.add()` to `this.$store.commit('increment')`
+      isVisible: 'showCart', // map `this.add()` to `this.$store.commit('increment')`
+      total: 'cartTotalPrice'
+
     })
   }
 };
