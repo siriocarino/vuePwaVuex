@@ -26,14 +26,20 @@ export const mutations = {
           state.products.all = products
      },
      [types.PUSH_PRODUCTS_TO_CART](state, products) {
+          console.log(products)
+          products.quantity = 1;
+          console.log(products)
+
           state.cart.added.push(products)
      },
      [types.INCREMENT_CART](state, products) {
+          console.log(products)
           const cartItem = state.cart.added.find(item => item.id === products.id)
           cartItem.quantity++
      },
      [types.DECREMENT_PRODUCT](state, products) {
-          // decrement products;
+          // const product = state.products.all.find(product => product.id === products.id)
+          // product.inventory--
      },
 
 }

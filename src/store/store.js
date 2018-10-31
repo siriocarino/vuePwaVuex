@@ -15,7 +15,7 @@ export const state = {
           added: [],
           checkoutStatus: '',
           quantity:0,
-          total:0
+          total:100
      },
      title: 'My Custom Title',
      count: 0,

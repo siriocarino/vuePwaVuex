@@ -24,8 +24,9 @@ export const actions = {
         if(!selfItem){
             context.commit("PUSH_PRODUCTS_TO_CART", product)
         }else{
-            context.commit("INCREMENT_CART", product)
+            context.commit("INCREMENT_CART", selfItem)
         }
-        context.commit("DECREMENT_PRODUCT", product)
+        context.commit("DECREMENT_PRODUCT", selfItem)
     },
+   
 }

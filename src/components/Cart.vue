@@ -10,7 +10,7 @@
     </ul>
     <p>Total: {{ total | currency }}</p>
 
-    <p><button  @click="checkout(cart)">Checkout</button></p>
+    <p><button @click="checkout(cart)">Checkout</button></p>
 
 </div>
 
